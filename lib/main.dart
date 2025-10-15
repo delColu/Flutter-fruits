@@ -57,10 +57,10 @@ class MyApp extends StatelessWidget {
               child: ListTile(
                 leading: Icon(Icons.local_grocery_store),
                 title: Text(fruit['name']),
-                subtitle: Text(fruit['price'].toString()),
+                subtitle: Text('$'fruit['price'].toString()),
                 trailing: ElevatedButton.icon(
                   onPressed: () {
-                    print('Icon button pressed!');
+                    print('${fruit['name']} added to cart');
                   },
                   icon: Icon(Icons.add), // The icon to display
                   label: Text('Add to cart'), // The text label
@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
                       content: Text(
-                        "You selected ${fruit['name']} - ${fruit['price']}",
+                        "You selected ${fruit['name']} - '$'${fruit['price']}",
                       ),
                     ),
                   );
